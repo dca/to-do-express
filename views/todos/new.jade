@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddTodo(name="addtodo",method="post",action="/todos")
+        p Content: 
+            input#inputContent(type="text", placeholder="Whatcha wanna get done?", name="content")
+        p Completed?:
+            input#inputCompleted(type="checkbox", name="completed")
+        p DOB: 
+            input#inputDob(type="date", name="dob")
+        p
+            button#btnSubmit(type="submit") submit

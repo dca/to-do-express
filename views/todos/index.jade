@@ -1,0 +1,24 @@
+extends ../layout
+
+
+block content
+    h1.
+         #{title}
+    ul
+        - each todo, i in todos
+            li
+                = todo.content
+                = todo.completed
+                br
+                = todo._id
+                form(action='/todos/#{todo._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p 
+                    a(href='/todos/#{todo._id}/edit') Edit
+                p
+                    a(href='/todos/#{todo._id}') Show
+block link
+    a(href="/todos/new") create a new one
+    

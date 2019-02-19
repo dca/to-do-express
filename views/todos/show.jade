@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1.
+        #{todo.content}
+    p Have we done this yet? #{todo.completed ? 'Yep!' : 'Not yet.. '}
+    p Submitted on: #{tododob}
+    p id: #{todo._id}
+
+    p
+        a(href="/todos") Back to todos
+        
